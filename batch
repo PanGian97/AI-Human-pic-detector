@@ -1,0 +1,23 @@
+@ECHO "Starting script.."
+cd ..\New
+
+setlocal enableextensions enabledelayedexpansion
+
+:A 
+set /a "pics = 0"
+FOR /F %%X IN ('DIR /S /B *.jpg') DO SET /A "pics+=1"
+if %pics% GEQ 5 (goto :B) else (goto :A)
+echo %pics%
+endlocal
+
+
+ 
+
+:B
+cd..\people detector
+python people-detect.py -d ../New/ --confidence 60 --twilio
+pause
+exit /B
+
+    
+    
