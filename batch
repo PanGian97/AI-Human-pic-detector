@@ -1,5 +1,5 @@
 @ECHO "Starting script.."
-cd ..\New
+cd ..\cam_front
 
 setlocal enableextensions enabledelayedexpansion
 
@@ -14,8 +14,11 @@ endlocal
  
 
 :B
-cd..\people detector
-python people-detect.py -d ../New/ --confidence 60 --twilio
+cd..\people detector\previous_scanned_images
+del "*.*" /Q
+cd..\
+python people-detect.py -d ../New --confidence 50 --aws --cam cam_front
+MOVE ..\cam_front\*.jpg previous_scanned_images
 pause
 exit /B
 
