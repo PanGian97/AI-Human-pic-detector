@@ -226,10 +226,10 @@ if __name__ == "__main__":
             #TWILIO_SID = os.environ['TWILIO_SID']
             #TWILIO_FROM = os.environ['TWILIO_FROM']
             #TWILIO_TO = os.environ['TWILIO_TO']
-            TWILIO_TOKEN = '2036ed670f88e76614c72e42f89596b0'
-            TWILIO_SID = 'ACbf25e376ad5908b7e4fefac50b37d5b8'
-            TWILIO_FROM = '15713395163'
-            TWILIO_TO = '306909491533'
+            TWILIO_TOKEN = '[your_twilio token]'
+            TWILIO_SID = '[your_twilio_sid]'
+            TWILIO_FROM = '[your_twilio_number]'
+            TWILIO_TO = '[your_target_number]'
         except:
             print('Something went wrong with the Twilio variables. Either set your environment variables or hardcode values in to script: TWILIO_TOKEN, TWILIO_SID, TWILIO_FROM, TWILIO_TO')
             sys.exit(1)
